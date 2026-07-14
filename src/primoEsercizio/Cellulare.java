@@ -28,39 +28,33 @@ public class Cellulare {
 	}
 
 	public void effettuaChiamata(String numero, int minuti) {
-		int lunghezzanumero = numero.length();
-		if (tariffa <= 0 || creditoDisponibile <= 0) {
-			System.out.println("Il Credito non è sufficiente o la tariffa non è corretta");
-		} else {
-			if (lunghezzanumero > 8 && lunghezzanumero < 15) {
-				double costoTeorico = minuti * tariffa;
+	    int lunghezzanumero = numero.length();
+	    
+	    if (tariffa <= 0 || creditoDisponibile <= 0) {
+	        System.out.println("Il Credito non è sufficiente o la tariffa non è corretta");
+	    } else {
+	        if (lunghezzanumero > 8 && lunghezzanumero < 15) {
+	            double costoTeorico = minuti * tariffa;
 
-				if (costoTeorico <= creditoDisponibile) {
-
-					System.out.println("--------------------------------");
-					creditoDisponibile -= costoTeorico;
-					chiamateEffettuate++;
-					System.out.println("Hai effettuato una chiamata al numero: " + numero);
-					System.out.println("--------------------------------");
-				} else {
-
-					System.out.println("--------------------------------");
-					System.out.println("Credito Insufficiente");
-					System.out.println("--------------------------------");
-
-				}
-			}
-			else {
-				System.out.println("--------------------------------");
-				System.out.println("Numero Non Valido, Il numero deve essere di almeno 8 caratteri, massimo 15");
-				System.out.println("--------------------------------");
-
-			}
-
-		}
-
+	            System.out.println("--------------------------------");
+	            
+	            if (costoTeorico <= creditoDisponibile) {
+	                creditoDisponibile -= costoTeorico;
+	            } else {
+	                creditoDisponibile = 0.0;
+	                System.out.println("Attenzione: Il credito è stato esaurito durante la chiamata");
+	            }
+	            chiamateEffettuate++;
+	            System.out.println("Hai effettuato una chiamata al numero: " + numero);
+	            System.out.println("--------------------------------");
+	            
+	        } else {
+	            System.out.println("--------------------------------");
+	            System.out.println("Numero Non Valido. Il numero deve essere di almeno 8 caratteri, massimo 15");
+	            System.out.println("--------------------------------");
+	        }
+	    }
 	}
-
 	public void stampaCreditoDisponibile() {
 
 		System.out.println("--------------------------------");
