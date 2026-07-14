@@ -32,7 +32,7 @@ public class Cellulare {
 		if (tariffa <= 0 || creditoDisponibile <= 0) {
 			System.out.println("Il Credito non è sufficiente o la tariffa non è corretta");
 		} else {
-			if (lunghezzanumero == 10) {
+			if (lunghezzanumero > 8 && lunghezzanumero < 15) {
 				double costoTeorico = minuti * tariffa;
 
 				if (costoTeorico <= creditoDisponibile) {
@@ -52,7 +52,7 @@ public class Cellulare {
 			}
 			else {
 				System.out.println("--------------------------------");
-				System.out.println("Numero Non Valido, Il numero deve essere di 15 caratteri");
+				System.out.println("Numero Non Valido, Il numero deve essere di almeno 8 caratteri, massimo 15");
 				System.out.println("--------------------------------");
 
 			}
