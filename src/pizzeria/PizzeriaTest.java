@@ -8,7 +8,7 @@ public class PizzeriaTest {
 		Cliente cliente1 = new Cliente(), cliente2 = new Cliente(), cliente3 = new Cliente();
 		cliente1.nome = "Davide";
 		cliente2.nome = "Kekko";
-		cliente3.nome = "Ciro";
+		cliente3.nome = "Ciro0";
 		cliente1.pizza = "Diavola";
 		cliente2.pizza = "Capricciosa";
 		cliente3.pizza = "Ai Funghi";		
